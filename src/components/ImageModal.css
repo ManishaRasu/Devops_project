@@ -1,0 +1,127 @@
+/* Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoomIn 0.3s ease-out;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: rgba(255, 170, 100, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 170, 100, 0.4);
+}
+
+.image-modal-close:hover {
+  background: rgba(231, 86, 58, 0.95);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 25px rgba(231, 86, 58, 0.5);
+}
+
+.image-modal-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+    0 10px 30px rgba(255, 170, 100, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-modal-caption {
+  color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .image-modal-close {
+    top: -35px;
+    font-size: 20px;
+  }
+
+  .image-modal-caption {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .image-modal-img {
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-modal-close {
+    top: -30px;
+    font-size: 18px;
+  }
+
+  .image-modal-caption {
+    font-size: 14px;
+  }
+}

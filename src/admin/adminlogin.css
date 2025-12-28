@@ -1,0 +1,332 @@
+/* Admin Login Page - Enhanced Modern Design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1a4971 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.admin-login-page::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(8, 145, 178, 0.1) 0%, transparent 40%);
+  animation: adminFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes adminFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(2%, 2%) rotate(1deg); }
+  50% { transform: translate(0, 4%) rotate(0deg); }
+  75% { transform: translate(-2%, 2%) rotate(-1deg); }
+}
+
+.admin-login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 950px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.3),
+    0 10px 30px rgba(30, 58, 95, 0.2);
+  position: relative;
+  z-index: 1;
+  animation: adminSlideUp 0.6s ease-out;
+}
+
+@keyframes adminSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Banner */
+.admin-login-banner {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1a4971 100%);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-login-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.08)"/></svg>');
+  opacity: 0.5;
+}
+
+.admin-banner-icon {
+  font-size: 5rem;
+  margin-bottom: 30px;
+  animation: adminPulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes adminPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.admin-banner-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.admin-banner-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-banner-features {
+  margin-top: 40px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-banner-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin: 12px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-feature-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* Right Form Section */
+.admin-login-form-section {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.admin-login-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-login-header p {
+  font-family: 'Poppins', sans-serif;
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-form-group {
+  position: relative;
+}
+
+.admin-form-group label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.admin-form-group input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.admin-form-group input:focus {
+  outline: none;
+  border-color: #1e3a5f;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
+}
+
+.admin-form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-error-message {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #fca5a5;
+  animation: adminShake 0.5s ease;
+}
+
+@keyframes adminShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.admin-submit-btn {
+  padding: 16px 24px;
+  border: none;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  color: white;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.admin-submit-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.admin-submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(30, 58, 95, 0.4);
+}
+
+.admin-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-back-link {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.admin-back-link a {
+  font-family: 'Poppins', sans-serif;
+  color: #6b7280;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.admin-back-link a:hover {
+  color: #1e3a5f;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .admin-login-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  
+  .admin-login-banner {
+    display: none;
+  }
+  
+  .admin-login-form-section {
+    padding: 50px 35px;
+  }
+}
+
+@media (max-width: 500px) {
+  .admin-login-page {
+    padding: 15px;
+  }
+  
+  .admin-login-form-section {
+    padding: 40px 25px;
+  }
+  
+  .admin-login-header h1 {
+    font-size: 1.8rem;
+  }
+}

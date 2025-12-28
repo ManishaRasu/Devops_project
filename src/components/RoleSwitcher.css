@@ -1,0 +1,83 @@
+.role-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.role-switcher-header {
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  background: white;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.role-btn:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.role-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.role-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.current-role {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.role-badge {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.role-badge.admin {
+  background: #ffeaa7;
+  color: #d63031;
+}
+
+.role-badge.owner {
+  background: #d4edda;
+  color: #155724;
+}
+
+.role-badge.user {
+  background: #cce5ff;
+  color: #0056b3;
+}

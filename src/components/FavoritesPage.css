@@ -1,0 +1,257 @@
+/* FavoritesPage Specific Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Import base PetsPage styles */
+@import './PetsPage.css';
+
+/* Override for Favorites Page specific layout */
+.favorites-main-content {
+  background: #fffaf6;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Favorites Container - Full width without sidebar */
+.favorites-pets-container {
+  display: block;
+  margin-left: 0;
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+  margin-top: 0;
+  background: #fffaf6;
+  width: 100%;
+}
+
+/* Hide the sidebar completely */
+.favorites-filter-sidebar {
+  display: none;
+}
+
+.favorites-filter-sidebar h2 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.favorites-filter-sidebar p {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  margin: 0;
+}
+
+/* Favorites Header */
+.favorites-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(255, 170, 100, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 170, 100, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.favorites-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffaa64, #e7563a);
+}
+
+.favorites-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffaa64, #e7563a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.favorites-count {
+  font-family: 'Inter', sans-serif;
+  color: #4a5568;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255, 170, 100, 0.15), rgba(231, 86, 58, 0.15));
+  padding: 0.875rem 2rem;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 170, 100, 0.3);
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(255, 170, 100, 0.15);
+  transition: all 0.3s ease;
+}
+
+.favorites-count:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 170, 100, 0.25);
+}
+
+/* Pet Cards Grid for Favorites - Full width */
+.favorites-pet-cards {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 2rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove Button Styling */
+.cart-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 25px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+  margin-left: 10px !important;
+  min-width: 160px !important;
+  display: inline-block !important;
+}
+
+.cart-btn:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+}
+
+.cart-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Pet Buttons Container for Favorites */
+.favorites-pet-buttons {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: auto !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 15px !important;
+}
+
+/* Responsive Design for Favorites */
+@media (max-width: 1400px) {
+  .favorites-pets-container {
+    padding: 1.5rem;
+  }
+
+  .favorites-pet-cards {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .favorites-pets-container {
+    padding: 1.5rem;
+  }
+
+  .favorites-pet-cards {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .favorites-pets-container {
+    margin-top: 0;
+    padding: 1rem;
+  }
+
+  .favorites-pet-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem !important;
+  }
+
+  .favorites-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .favorites-pets-container {
+    margin-top: 0;
+    padding: 0.8rem;
+  }
+
+  .favorites-pet-cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .favorites-header {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .favorites-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .cart-btn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+    min-width: unset !important;
+  }
+
+  .favorites-pet-buttons {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+}
+
+/* Empty State Styling */
+.favorites-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+}
+
+.favorites-empty-state h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.favorites-empty-state p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}

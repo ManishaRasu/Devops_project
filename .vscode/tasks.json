@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Tailmate server",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"npm run server"
+			],
+			"problemMatcher": [
+				"$eslint-compact"
+			],
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,290 @@
+.chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Remove padding-top to use global main-content padding */
+}
+
+.chat-container .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: 0;
+    /* Override global padding for chat */
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.owner-chat-page {
+    max-width: 1200px;
+    /* Increased from 900px to 1200px */
+    width: 95%;
+    /* Use 95% of available width */
+    margin: 0 auto;
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 0;
+}
+
+.owner-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.owner-chat-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.owner-chat-box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    /* Increased border radius */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Added shadow for better visibility */
+    width: 100%;
+    /* Ensure full width usage */
+}
+
+.owner-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background: #f8f9fb;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.no-messages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+    font-style: italic;
+}
+
+.owner-msg {
+    max-width: 70%;
+    margin: 6px 0;
+    padding: 8px 12px 18px;
+    border-radius: 12px;
+    line-height: 1.3;
+    position: relative;
+    word-break: break-word;
+    align-self: flex-start;
+}
+
+.owner-msg.mine {
+    background: #d6f5d6;
+    align-self: flex-end;
+}
+
+.owner-msg.theirs {
+    background: #e9ecef;
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+}
+
+.owner-msg .meta {
+    font-size: 11px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.owner-msg .ticks {
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    font-size: 11px;
+    display: flex;
+    gap: 2px;
+}
+
+.owner-msg .tick {
+    color: #666;
+}
+
+.owner-msg .tick.read {
+    color: #0a7;
+}
+
+.owner-send-row {
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #eee;
+    padding: 8px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.owner-send-row input {
+    flex: 1;
+    padding: 12px 15px;
+    /* Increased padding for better touch targets */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Rounded corners to match chat box */
+    min-width: 0;
+    font-size: 14px;
+}
+
+.owner-send-row button {
+    padding: 12px 20px;
+    /* Increased padding to match input */
+    border: none;
+    border-radius: 8px;
+    /* Match input border radius */
+    background: linear-gradient(135deg, #ff7f50, #ff6b47);
+    /* Match theme colors */
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 127, 80, 0.3);
+}
+
+.owner-send-row button:hover {
+    background: linear-gradient(135deg, #ff6b47, #ff5722);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.4);
+}
+
+@media (max-width: 800px) {
+    /* Remove conflicting padding-top */
+
+    .owner-chat-page {
+        padding: 12px;
+        width: 98%;
+        /* Use more width on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Remove conflicting padding-top */
+
+    .owner-chat-page {
+        padding: 8px;
+        width: 100%;
+        /* Full width on mobile */
+        max-width: none;
+        /* Remove max-width constraint on mobile */
+    }
+
+    .owner-msg {
+        max-width: 85%;
+        font-size: 14px;
+        padding: 8px 10px 18px;
+    }
+
+    .owner-chat-header {
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .owner-chat-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .owner-send-row {
+        padding: 12px 8px;
+        gap: 6px;
+    }
+
+    .owner-send-row input {
+        padding: 12px;
+        font-size: 16px;
+        /* Prevent zoom on iOS */
+    }
+
+    .owner-send-row button {
+        padding: 12px 16px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .owner-chat-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .owner-msg {
+        font-size: 13px;
+        max-width: 90%;
+    }
+
+    .owner-send-row {
+        padding: 10px 6px;
+    }
+
+    .owner-send-row input {
+        padding: 10px;
+    }
+
+    .owner-send-row button {
+        padding: 10px 12px;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Remove conflicting padding-top */
+
+    .owner-chat-page {
+        padding: 6px;
+        width: 100%;
+    }
+
+    .owner-chat-header {
+        margin-bottom: 6px;
+    }
+
+    .owner-send-row {
+        padding: 6px;
+    }
+}
+
+/* Ultra-wide screen optimization */
+@media (min-width: 1400px) {
+    .owner-chat-page {
+        max-width: 1400px;
+        /* Even wider on ultra-wide screens */
+        width: 90%;
+        /* Use 90% width on very large screens */
+        padding: 20px;
+    }
+
+    .owner-chat-box {
+        border-radius: 15px;
+        /* Larger border radius for bigger screens */
+    }
+
+    .owner-send-row input {
+        padding: 15px 20px;
+        /* More generous padding */
+        font-size: 16px;
+    }
+
+    .owner-send-row button {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+}

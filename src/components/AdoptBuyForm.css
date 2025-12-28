@@ -1,0 +1,78 @@
+.adoptbuy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.adoptbuy-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 720px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: pop 0.15s ease-out;
+}
+
+@keyframes pop { from { transform: scale(0.98); opacity: 0.95; } to { transform: scale(1); opacity: 1; } }
+
+.adoptbuy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+}
+.adoptbuy-header h3 { margin: 0; }
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.adoptbuy-body { padding: 16px; }
+
+.pet-summary { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; }
+.pet-thumb { width: 80px; height: 80px; border-radius: 8px; overflow: hidden; flex: 0 0 auto; }
+.pet-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pet-name { font-weight: 600; }
+.pet-meta { color: #666; font-size: 14px; }
+.pet-price { color: #0a7; font-weight: 600; }
+
+.form-error { background: #ffecec; color: #a00; border: 1px solid #f5b5b5; padding: 8px 10px; border-radius: 8px; margin: 10px 0; }
+.form-success { background: #e8ffef; color: #0a5; border: 1px solid #b7f0cb; padding: 8px 10px; border-radius: 8px; margin: 10px 0; }
+
+.adoptbuy-form { display: grid; gap: 10px; }
+.field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.field .req { color: #d33; margin-left: 4px; }
+.field input, .field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.field textarea { min-height: 80px; resize: vertical; }
+
+.actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+.cancel-btn {
+  background: #eee;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.adopt-btn {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.adopt-btn:disabled { opacity: 0.7; cursor: default; }

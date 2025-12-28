@@ -1,0 +1,128 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefdf9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffa07a;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Home Page */
+.home-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  background-color: #fff5f0;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.search-bar {
+  margin-top: 1.5rem;
+}
+
+.search-bar input {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  width: 250px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  background-color: #ff7f50;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ff6333;
+}
+
+/* Pet Cards */
+.pet-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pet-card {
+  background-color: #fff;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pet-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.pet-card h3 {
+  margin: 0.8rem 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.pet-card p {
+  color: #777;
+  font-size: 0.95rem;
+}

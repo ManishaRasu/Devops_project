@@ -1,0 +1,114 @@
+/* TailMate App Global Styles */
+@import './components/GlobalStyles.css';
+
+/* CSS Variables */
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --bg-light: #f8f9fa;
+}
+
+/* ===== APP LAYOUT ===== */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  flex: 1;
+  padding-top: 70px;
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ===== PAGE CONTAINERS ===== */
+.page-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .page-container {
+    margin: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .main-content {
+    padding-top: 80px;
+    /* Slightly less padding on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 75px;
+    /* Even less padding on small mobile */
+  }
+
+  .page-container {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+/* ===== ANIMATION UTILITIES ===== */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
