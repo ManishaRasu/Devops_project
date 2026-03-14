@@ -1,0 +1,22 @@
+name: Docker Compose CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker Containers
+        run: docker compose build
+
+      - name: Start Containers
+        run: docker compose up -d
+
+      - name: Check Running Containers
+        run: docker ps
