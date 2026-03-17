@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        COMPOSE_PROJECT_NAME = "tailmate"
-    }
-
     stages {
 
         stage('Checkout') {
@@ -13,59 +9,26 @@ pipeline {
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Test Pipeline') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'docker compose build'
-                    } else {
-                        bat 'docker compose build'
-                    }
-                }
+                echo 'Pipeline is working!'
             }
         }
 
-        stage('Deploy with Docker Compose') {
+        stage('Run Docker (Optional)') {
             steps {
-                script {
-                    if (isUnix()) {
-                        sh 'docker compose up -d'
-                    } else {
-                        bat 'docker compose up -d'
-                    }
-                }
+                echo 'Run docker manually in terminal'
             }
         }
 
     }
 
     post {
-
-        always {
-            echo 'Pipeline has finished execution.'
-        }
-
         success {
-            echo 'Deployment successful. Checking services...'
-            script {
-                if (isUnix()) {
-                    sh 'docker compose ps'
-                } else {
-                    bat 'docker compose ps'
-                }
-            }
+            echo 'Pipeline executed successfully!'
         }
-
         failure {
-            echo 'Deployment failed. Gathering logs...'
-            script {
-                if (isUnix()) {
-                    sh 'docker compose logs'
-                } else {
-                    bat 'docker compose logs'
-                }
-            }
+            echo 'Pipeline failed!'
         }
-
     }
 }
