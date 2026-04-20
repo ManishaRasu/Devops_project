@@ -50,7 +50,7 @@ const upload = multer({
 });
 
 // Use database name 'petad'
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/petad';
+const mongoURI = process.env.MONGO_URI || 'mongodb://mongo:27017/tailmate';
 mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
@@ -456,8 +456,8 @@ app.get('/api/owners/:id/pets', async (req, res) => {
     if (!owner) {
       return res.status(404).json({ success: false, message: 'Owner not found' });
     }
-    const pets = await Pet.find({ 
-      owner: req.params.id, 
+    const pets = await Pet.find({
+      owner: req.params.id,
       ownerModel: 'Owner',
       status: 'available'
     }).populate({

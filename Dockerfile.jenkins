@@ -1,0 +1,28 @@
+FROM jenkins/jenkins:lts
+USER root
+
+# Install Docker CLI static binary to /usr/bin (guaranteed to be in PATH)
+RUN curl -fsSL https://download.docker.com/linux/static/stable/x86_64/docker-26.1.4.tgz -o docker.tgz \
+    && tar xzvf docker.tgz --strip-components=1 -C /usr/bin docker/docker \
+    && rm docker.tgz \
+    && chmod +x /usr/bin/docker
+
+# Install Docker Compose V2 plugin
+RUN mkdir -p /usr/local/lib/docker/cli-plugins \
+    && curl -SL https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose \
+    && chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+# Verification build step - the build will FAIL here if docker is not installed correctly
+RUN docker --version && docker compose version
+
+# Ensure jenkins user has access to the docker socket
+RUN groupadd -f docker && usermod -aG docker jenkins
+
+# Optional: Try to update apt but ignore failures
+RUN apt-get update || true
+
+USER jenkins
+
+
+
+
